@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "TimeOfDayHandler.h"
 #include "Clock.h"
+#include "TimeOfDayHandler.h"
 
 // Sets default values
 AClock::AClock()

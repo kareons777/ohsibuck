@@ -6,6 +6,7 @@
 #include "MyFirstActor.h"
 #include "GameFramework/GameMode.h"
 #include "Engine.h"
+#include "MyInterface.h"
 #include "OhsibuckGameMode.generated.h"
 
 /**
@@ -38,4 +39,14 @@ public:
 			return Cast< AOhsibuckGameMode >( UGameplayStatics::GetGameMode( pWorld ));
 		return nullptr;
 	}
+
+	UFUNCTION( BlueprintCallable, Category = UIFuncs ) void ButtonClicked();
+
+	// Chapter6 ... Àß ¾ÈµÊ.
+	//UPROPERTY() UUserWidget* CurrentWidget;
+	//UFUNCTION( BlueprintCallable, Category = UIFuncs )
+	//void ChangeMenuWidget( TSubclassOf< UUserWidget > NewWidgetClass );
+
+	// Chapter 7
+	TArray< IMyInterface* > MyInterfaceInstances;
 };

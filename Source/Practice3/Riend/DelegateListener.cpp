@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "OhsibuckGameMode.h"
 #include "DelegateListener.h"
+#include "OhsibuckGameMode.h"
 
 // Sets default values
 ADelegateListener::ADelegateListener()

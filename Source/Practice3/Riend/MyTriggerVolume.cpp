@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "OhsibuckGameMode.h"
 #include "MyTriggerVolume.h"
+#include "OhsibuckGameMode.h"
 
 // Sets default values
 AMyTriggerVolume::AMyTriggerVolume()
@@ -34,9 +34,12 @@ void AMyTriggerVolume::NotifyActorBeginOverlap( AActor* OtherActor )
 	if( TheWorld != nullptr )
 	{
 		auto myGameMode = Cast< AOhsibuckGameMode >( UGameplayStatics::GetGameMode( TheWorld ));
-		myGameMode->MyStandardDelegate.ExecuteIfBound();
-		myGameMode->MyParameterDelegate.ExecuteIfBound( FLinearColor (1, 0, 0, 1 ));
-		myGameMode->MyMulticastDelegate.Broadcast();
+		if( myGameMode != nullptr )
+		{
+			myGameMode->MyStandardDelegate.ExecuteIfBound();
+			myGameMode->MyParameterDelegate.ExecuteIfBound( FLinearColor (1, 0, 0, 1 ));
+			myGameMode->MyMulticastDelegate.Broadcast();
+		}
 	}
 	OnPlayerEntered.Broadcast();
 }
